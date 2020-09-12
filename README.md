@@ -1,6 +1,6 @@
 # Yomemi-Moemi-Classification-Sample
 ![GitHub](https://img.shields.io/github/license/nerrog/Yomemi-Moemi-Classification-Sample)
-![Twitter Follow](https://img.shields.io/twitter/follow/nerrog_blog)
+[![Twitter Follow](https://img.shields.io/twitter/follow/nerrog_blog)](https://twitter.com/intent/follow?screen_name=nerrog_blog)
 
 [ヨメミか萌実か判別するAI](https://app-yo-moe-ai.nerrog.net)のモデル生成に使用されたソースコードです
 
