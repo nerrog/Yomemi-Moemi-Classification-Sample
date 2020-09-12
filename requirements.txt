@@ -5,4 +5,3 @@ keras==2.4.0
 opencv-python==4.4.0.42
 Pillow==7.2.0
 tensorflow-gpu==2.3.0
-flask==1.1.2
