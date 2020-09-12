@@ -19,6 +19,13 @@
 
 ・NVIDIA GeForce RTX 2060 SUPER
 # 使用方法
+## 必要ライブラリのインストール
+
+requirements.txtちょっと適当に作ってしまったので間違ってたらPRでも送っていただけると幸いです
+
+```
+ pip3 install -r requirements.txt
+```
 
 ## データセットの準備
 まず`Moemi`、`Yomemi`フォルダにそれぞれ画像を集めてきます
