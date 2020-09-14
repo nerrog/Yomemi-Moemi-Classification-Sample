@@ -1,6 +1,3 @@
-# -*- coding: utf-8 -*-
-# 引数に指定された画像を推測するスクリプト
-
 import keras
 import sys
 import os
@@ -30,7 +27,7 @@ def load_image(path):
 model = load_model(keras_param)
 img = load_image(testpic)
 prd = model.predict(np.array([img]))
-
+# input()
 print(prd)  # 精度を表示
 prelabel = np.argmax(prd, axis=1)
 if prelabel == 0:

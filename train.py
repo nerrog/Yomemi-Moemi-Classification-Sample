@@ -1,11 +1,9 @@
-# -*- coding: utf-8 -*-
-# numpyバイナリからモデルをトレーニングするスクリプト
-
 from keras.models import Sequential
 from keras.layers import Conv2D, MaxPooling2D
 from keras.layers import Activation, Dropout, Flatten, Dense
 from keras.optimizers import RMSprop
 from keras.utils import np_utils
+import matplotlib.pyplot as plt
 import keras
 import numpy as np
 
@@ -53,9 +51,32 @@ def train(X, y, X_test, y_test):
     opt = RMSprop(lr=0.00005, decay=1e-6)
     model.compile(loss='categorical_crossentropy',
                   optimizer=opt, metrics=['accuracy'])
-    model.fit(X, y, batch_size=28, epochs=20)
+    history = model.fit(X, y, batch_size=32, epochs=15)
     # HDF5ファイルにKerasのモデルを保存
     model.save('./cnn.h5')
+
+    # 学習過程を可視化
+
+    metrics = ['loss', 'accuracy']  # 評価関数を指定
+
+    plt.figure(figsize=(10, 5))
+
+    for i in range(len(metrics)):
+
+        metric = metrics[i]
+
+        plt.subplot(1, 2, i+1)
+        plt.title(metric)
+
+        plt_train = history.history[metric]
+
+        plt.plot(plt_train, label='training')
+        plt.legend()
+
+        plt.show()  # グラフの表示
+
+    # モデル構造の可視化
+    model.summary()
 
     return model
 
